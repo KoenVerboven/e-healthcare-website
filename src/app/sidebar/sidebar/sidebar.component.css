@@ -5,7 +5,7 @@
     height: 100vh;
     transition: 0.3s;
     width: 170px;
-    background: rgb(185, 238, 209);
+    background: rgb(233, 236, 234);
     color: #0f0f0f;
      
   
@@ -24,7 +24,7 @@
           cursor: pointer;
           transition: 0.5s;
            &:hover {
-            background:rgb(43, 156, 103);
+            background:rgb(228, 99, 196);
             .title {
               color: rgb(240, 236, 236);
             }
