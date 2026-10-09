@@ -1,1 +1,81 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    font-family:  Arial,Helvetica, sans-serif;
+}
+html, body { 
+  height: 100%; 
+}
+body { 
+  margin: 0;
+  font-family: Roboto,"Helvetica Neue", sans-serif; 
+}
+.table-hover .cell-hoverCursor:hover{
+  cursor: pointer;
+}
+.table-hover tbody tr:hover td {
+  background-color: rgb(207, 230, 248);
+  color:rgb(0, 0, 0);
+}
+.errorLabel{
+  padding-left:20px;
+  width: 100%;
+  color:rgb(253, 4, 4);
+  background-color:white
+}
+.pageTitle{
+  padding-left:20px;
+  padding-top:2px;
+  padding-bottom:2px;
+  font-size: 21px;
+  width: 100%;
+  height: 32px;
+  border: 1px solid rgb(173, 169, 169);
+  border-radius: 4px;
+  color:rgb(235, 240, 243);
+  background-color: rgb(92, 132, 184);
+}
+.sectionTitle{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    background-color: #7085fd;
+    color:white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 2px;
+    width: 100%;
+}
+.subTitle{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background-color: #ec8743;
+    color:white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    width: fit-content;
+}
+.formClass{
+   padding: 0rem!important;
+}
+.buttonBar{
+  padding: 0.5rem;
+  width: 100%;
+  margin-bottom: 14px;
+  height: 53px;
+  border: 1px solid rgb(184, 192, 117);
+  border-radius: 4px;
+  color:rgb(7, 6, 0);
+  background-color: rgb(235, 232, 231);
+}
+th{
+  background-color: rgb(245, 244, 167) !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+}
+.headerButton{
+  border-color: rgb(149, 216, 233) !important;
+  border-width: 2px !important;
+}
