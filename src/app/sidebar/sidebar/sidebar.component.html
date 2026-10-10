@@ -1,20 +1,36 @@
 <div class="sidebar" >
     <div class="content">
-        <div class="link" >
-            <div class="content" [routerLink]="['hospitals']" >
+        <div class="link">
+          <div class="content" [routerLink]="['hospitals']" [routerLinkActive]="'active'">
+            <div class="icon"  data-placement="right" title="Hospitals">
+              <i class="bi bi-hospital"></i>
+            </div>
             <div class="title">Hospitals</div>
+          </div>
         </div>
-        <div class="link" >
-            <div class="content" [routerLink]="['doctors']" >
+        <div class="link">
+          <div class="content" [routerLink]="['doctors']">
+            <div class="icon"  data-placement="right" title="Doctors">
+              <i class="bi bi-person-vcard"></i>
+            </div>
             <div class="title">Doctors</div>
+          </div>
         </div>
-        <div class="link" >
-            <div class="content" [routerLink]="['patients']" >
+        <div class="link">
+          <div class="content" [routerLink]="['patients']" >
+            <div class="icon"  data-placement="right" title="Patients">
+              <i class="bi bi-person-vcard"></i>
+            </div>
             <div class="title">Patients</div>
+          </div>
         </div>
-        <div class="link" >
-            <div class="content"  [routerLink]="['appointments']" >
+        <div class="link">
+          <div class="content" [routerLink]="['appointments']" >
+            <div class="icon"  data-placement="right" title="Appointments">
+              <i class="bi bi-calendar"></i>
+            </div>
             <div class="title">Appointments</div>
+          </div>
         </div>
     </div>
   </div>
