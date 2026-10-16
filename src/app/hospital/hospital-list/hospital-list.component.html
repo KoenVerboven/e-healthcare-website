@@ -4,30 +4,18 @@
       <tr class="cell-hoverCursor">
          <th class="p-2" style="width: 12%;text-align:left;">Name</th>
          <th class="p-2" style="width: 20%;text-align:left;">Address</th>
+         <th class="p-2" style="width: 20%;text-align:left;">Phone Number</th>
+         <th class="p-2" style="width: 10%;text-align:left;">Email</th>
       </tr>
     </thead>
     <tbody>
-        <tr>      
-          <td style="text-align: left;">AZ Vosselaar</td>        
-          <td style="text-align: left;">Galaatsstraat 1, 2300 Vosselaar</td>   
+      @for(hospital of hospitals; track  hospital.id) {
+        <tr class="cell-hoverCursor" >
+          <td class="p-2" style="text-align: left;">{{hospital.name}}</td>
+          <td class="p-2" style="text-align: left;">{{hospital.address}}</td>
+          <td class="p-2" style="text-align: left;">{{hospital.phonenumber}}</td>
+          <td class="p-2" style="text-align: left;">{{hospital.email}}</td>
         </tr>
-        <tr>      
-          <td style="text-align: left;">AZ Beerse</td>        
-          <td style="text-align: left;">Nonnestraat 1, 3000 Beerse</td>   
-        </tr>
-        <tr>      
-          <td style="text-align: left;">UZ Test</td>        
-          <td style="text-align: left;">University of Test, 3000 Test</td>   
-        </tr>
-        <tr>      
-          <td style="text-align: left;">UZ Hoofdstad</td>        
-          <td style="text-align: left;">University of Hoofdstad, 9000 Hoofdstad</td>   
-        </tr>
-          <tr>      
-          <td style="text-align: left;">UZ Willekeurig</td>        
-          <td style="text-align: left;">University of Willekeurig, 2000 Antwerpen</td>   
-        </tr>  
-       
-    </tbody>
+      }
   </table>
 

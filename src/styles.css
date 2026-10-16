@@ -33,14 +33,14 @@ body {
   height: 32px;
   border: 0px solid rgb(173, 169, 169);
   border-radius: 4px;
-   color:rgb(236, 122, 208);
+   color:rgb(58, 13, 180);
   background-color: rgb(255, 255, 255);
 }
 .sectionTitle{
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 18px;
-    background-color: #7085fd;
+    background-color: #0f31f1;
     color:white;
     padding-left: 10px;
     padding-right: 10px;
@@ -51,7 +51,7 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 16px;
-    background-color: #ec8743;
+    background-color: #4110f1;
     color:white;
     padding-left: 10px;
     padding-right: 10px;
@@ -72,7 +72,7 @@ body {
   background-color: rgb(235, 232, 231);
 }
 th{
-  background-color: rgb(255, 255, 254) !important;
+  background-color: rgb(191, 245, 242) !important;
   font-size: 16px !important;
   font-weight: normal !important;
 }

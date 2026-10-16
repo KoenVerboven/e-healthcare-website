@@ -30,9 +30,12 @@
           cursor: pointer;
           transition: 0.5s;
           &:hover {
-            background:rgb(131, 42, 109);
+            background:rgb(85, 147, 204);
             .title {
               color: rgb(240, 236, 236);
+            }
+            .icon {
+              color: rgb(241, 241, 243);
             }
             svg {
               fill: rgb(26, 25, 25);
@@ -40,14 +43,14 @@
             border-left: rgb(100, 70, 160);
           }
            &.active {
-            background:  rgb(220, 90, 190);
+            background:  rgb(18, 87, 128);
             .title {
               color: rgb(251, 251, 252);
             }
             .icon {
               color: rgb(241, 241, 243);
             }
-            border-left: 8px solid rgb(190, 70, 130);
+            border-left: 3px solid rgb(236, 20, 12);
           }
            
         }
