@@ -28,6 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Print Screen
 
-<img width="1856" height="555" alt="image" src="https://github.com/user-attachments/assets/7ee1c18c-e3c1-4a68-aec5-8dfda3dbf5a5" />
+<img width="1881" height="500" alt="image" src="https://github.com/user-attachments/assets/b87c671f-7284-408f-bf0e-a70e15588b34" />
+
 
 
