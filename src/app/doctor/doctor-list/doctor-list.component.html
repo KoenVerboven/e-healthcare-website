@@ -4,17 +4,17 @@
       <tr class="cell-hoverCursor">
          <th class="p-2" style="width: 12%;text-align:left;">LastName</th>
          <th class="p-2" style="width: 20%;text-align:left;">FirstName</th>
-         <th class="p-2" style="width: 12%;text-align:left;">Function</th>
          <th class="p-2" style="width: 20%;text-align:left;">Mobile</th>
+         <th class="p-2" style="width: 20%;text-align:left;">Email</th>
       </tr>
     </thead>
     <tbody>
         @for(doctor of doctors; track doctor.id) {
         <tr class="cell-hoverCursor" >
-          <td class="p-2" style="text-align: left;">{{doctor.name}}</td>
-          <td class="p-2" style="text-align: left;">{{doctor.address}}</td>
-          <td class="p-2" style="text-align: left;">{{doctor.medicaltitle}}</td>
+          <td class="p-2" style="text-align: left;">{{doctor.lastName}}</td>
+          <td class="p-2" style="text-align: left;">{{doctor.firstName}}</td>
           <td class="p-2" style="text-align: left;">{{doctor.phoneNumber}}</td>
+          <td class="p-2" style="text-align: left;">{{doctor.email}}</td>
         </tr>
       }
     </tbody>

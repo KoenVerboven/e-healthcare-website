@@ -15,5 +15,4 @@ app.config.ts:
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
      provideRouter(routes),
-     provideHttpClient()] /* don't forget to add the providers */   <--------------------------------------
-};
+     provideHttpClient()] /* don't forget to add the providers */   <------------

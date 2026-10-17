@@ -9,7 +9,7 @@ import {Doctor} from '../models/doctor.model';
 })
 export class DoctorService {
 
-  private apiUrl = `${environment.apiUrl}/doctors`;
+  private apiUrl = `${environment.apiUrl}/doctor`;
 
   constructor(private http: HttpClient) { }
 
