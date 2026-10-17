@@ -1,19 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hospital } from '../models/hospital.model';
 import { CommonModule } from '@angular/common';
+import { HospitalService } from '../services/hospital.service';
+import { Router , RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-hospital-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './hospital-list.component.html',
   styleUrl: './hospital-list.component.css'
 })
-export class HospitalListComponent {
+export class HospitalListComponent implements OnInit {
   PageTitle: string = 'Hospital List';
-  hospitals: Hospital[] = [
-    { id: 1, name: 'General Hospital', address: '123 Main St', phonenumber: '555-1234',email:'general@hospital.com' },
-    { id: 2, name: 'City Medical Center', address: '456 Oak Ave', phonenumber: '555-5678',email:'city@medical.com' },
-    { id: 3, name: 'County Hospital', address: '789 Pine Rd', phonenumber: '555-9012',email:'county@hospital.com'  }
-  ];
+  hospitalsCount = 0;
+  loading = false;
+  error = '';
+  hospitals: Hospital[] = [];
+
+  ngOnInit(): void {
+    this.getHospitals();
+  }
+
+  constructor(private hospitalService : HospitalService, private router: Router){}
+  
+  getHospitals():void{
+    this.loading = true;
+    this.hospitalService.getHospitals().subscribe(hospitalsFromApi => {
+        this.hospitals = hospitalsFromApi;
+        this.hospitalsCount = this.hospitals.length;
+      },
+      error => {
+        this.error = 'An error has occurred. Please try again later.';
+        console.log(error.message);
+        alert(error.message);
+      }
+    ) 
+  }
+
 }

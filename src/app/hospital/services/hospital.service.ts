@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environments';
+import { environment } from '../../../environments/environments';
 import {Observable} from 'rxjs';
 import { Hospital } from '../models/hospital.model';
 
@@ -9,7 +9,7 @@ import { Hospital } from '../models/hospital.model';
 })
 export class HospitalService {
 
-  private apiUrl = `${environment.apiUrl}/hospitals`; 
+  private apiUrl = `${environment.apiUrl}/hospital`; 
 
   constructor(private http: HttpClient) { }
 

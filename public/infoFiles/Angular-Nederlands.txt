@@ -1,0 +1,19 @@
+
+maak een nieuwe service 'appointment' aan en maak tergelijker tijd de map services aan, waarin de service wordt geplaatst:
+ng g s appointment\services\appointment
+
+maak een nieuw component 'hospital-detail' in de bestaande map hospital:
+ng g c hospital\hospital-detail
+
+maak een nieuw component 'doctor-detail' in de bestaande map doctor:
+ng g c doctor\doctor-detail
+
+start en open de website:
+ng serve --open
+
+app.config.ts:
+export const appConfig: ApplicationConfig = {
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }),
+     provideRouter(routes),
+     provideHttpClient()] /* don't forget to add the providers */   <--------------------------------------
+};

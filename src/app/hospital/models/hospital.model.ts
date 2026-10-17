@@ -2,6 +2,6 @@ export interface Hospital {
   id: number;
    name: string;
    address: string;
-   phonenumber: string;
+   phoneNumber: string;
    email: string;
 }
