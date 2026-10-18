@@ -8,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrl: './hospital-detail.component.css'
 })
 export class HospitalDetailComponent {
+  formAction: string = 'detail';
+  pageTitle:string = 'Hospital Detail';
+  
+  updateClick() {
+    throw new Error('Method not implemented.');
+  }
+  
+  navigateBack() {
+    throw new Error('Method not implemented.');
+  }
 
 }

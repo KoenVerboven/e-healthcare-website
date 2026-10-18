@@ -10,7 +10,7 @@
     </thead>
     <tbody>
         @for(doctor of doctors; track doctor.id) {
-        <tr class="cell-hoverCursor" >
+        <tr (click)="showDoctorDetail(doctor.id)" class="cell-hoverCursor" >
           <td class="p-2" style="text-align: left;">{{doctor.lastName}}</td>
           <td class="p-2" style="text-align: left;">{{doctor.firstName}}</td>
           <td class="p-2" style="text-align: left;">{{doctor.phoneNumber}}</td>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Patient } from '../models/patient.model';
 import { PatientService } from '../services/patient.service';
-import { Router , RouterModule} from '@angular/router';
+import { Router, RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-patient-list',
@@ -39,6 +39,10 @@ export class PatientListComponent implements OnInit {
           alert(error.message);
         }
       );
+    }
+
+    showPatientDetail(id: number): void {
+      this.router.navigate(['/patientdetail/detail', id]) 
     }
 
 }

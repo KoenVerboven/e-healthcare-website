@@ -38,4 +38,8 @@ export class HospitalListComponent implements OnInit {
     ) 
   }
 
+  showHospitalDetail(id: number): void {
+      this.router.navigate(['/hospitaldetail/detail', id]) 
+  }
+
 }

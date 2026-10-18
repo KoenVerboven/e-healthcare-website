@@ -11,7 +11,7 @@
     </thead>
     <tbody>
       @for(patient of patients; track patient.id) {
-        <tr>      
+        <tr (click)="showPatientDetail(patient.id)" class="cell-hoverCursor">      
           <td style="text-align: left;">{{patient.lastName}}</td>       
           <td style="text-align: left;">{{patient.firstName}}</td>   
           <td style="text-align: left;">{{patient.dateOfBirth | date}}</td>   
