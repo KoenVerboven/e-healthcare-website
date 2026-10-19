@@ -17,4 +17,20 @@ export class PatientService {
     return this.http.get<Patient[]>(this.apiUrl);
   }
 
+   getPatientById(id : number): Observable<Patient>{
+      return this.http.get<Patient>(`${this.apiUrl}/getById/${id}`)
+   }
+  
+   createPatient(patient    : Patient): Observable<Patient>{
+      return this.http.post<Patient>(this.apiUrl,patient  );
+   }
+  
+   deletePatient(id : number) : Observable<void>{
+      return this.http.delete<void>(`${this.apiUrl}/${id}`);
+   }
+  
+   updatePatient(patient: Patient):Observable<Patient>{
+      return this.http.put<Patient>(`${this.apiUrl}/${patient.id}`,patient );
+  }
+ 
 }

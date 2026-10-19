@@ -20,7 +20,7 @@
           <label class="form-label" style="float:right">Last Name *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="lastName"  />
+          <input required maxlength="30"  class="form-control"  type="text" name="lastName" [(ngModel)]="patient.lastName" />
         </div>   
       </div>
       <div class="row">
@@ -28,7 +28,7 @@
           <label class="form-label" style="float:right">First Name *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="firstName"  />
+          <input required maxlength="30"  class="form-control"  type="text" name="firstName" [(ngModel)]="patient.firstName" />
         </div>   
       </div>
       <div class="row">
@@ -36,7 +36,7 @@
           <label class="form-label" style="float:right">Address *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="address"  />
+          <input required maxlength="30"  class="form-control"  type="text" name="address" [(ngModel)]="patient.address" />
         </div>   
       </div>
       <div class="row">
@@ -44,7 +44,7 @@
           <label class="form-label" style="float:right">PhoneNumber *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="phoneNumber"  />
+          <input required maxlength="30"  class="form-control"  type="text" name="phoneNumber" [(ngModel)]="patient.phoneNumber" />
         </div>   
       </div>
       <div class="row">
@@ -52,7 +52,7 @@
           <label class="form-label" style="float:right">Email *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="email"  />
+          <input required maxlength="30"  class="form-control"  type="text" name="email" [(ngModel)]="patient.email" />
         </div>   
       </div>
       

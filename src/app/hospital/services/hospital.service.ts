@@ -17,4 +17,20 @@ export class HospitalService {
     return this.http.get<Hospital[]>(this.apiUrl);
   }
 
+  getHospitalById(id : number): Observable<Hospital>{
+    return this.http.get<Hospital>(`${this.apiUrl}/getById/${id}`)
+  }
+
+  createHospital(hospital : Hospital): Observable<Hospital>{
+    return this.http.post<Hospital>(this.apiUrl,hospital);
+  }
+
+  deleteHospital(id : number) : Observable<void>{
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  updateHospital(hospital: Hospital):Observable<Hospital>{
+    return this.http.put<Hospital>(`${this.apiUrl}/${hospital.id}`,hospital );
+  }
+
 }
