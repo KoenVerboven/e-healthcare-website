@@ -13,10 +13,11 @@ import { HospitalService } from '../services/hospital.service'
   styleUrl: './hospital-detail.component.css'
 })
 export class HospitalDetailComponent implements OnInit {
-  formAction: string = 'detail';
+
   isUpdating: boolean = false;
   disableControls: boolean = false;
   pageTitle:string = 'Hospital Detail';
+  action: string = 'detail';
   errorMessage : string = "";
   hospitalId: number = 0;
   hospital: Hospital = {id:0, name:"", address:"", phoneNumber:"", email:""};
@@ -31,7 +32,7 @@ export class HospitalDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(result => {
         const id = result.get('id');
-        const action = result.get('action');
+       // const action = result.get('action');
         this.hospitalId = Number(id);
                
         if(id){
@@ -42,24 +43,55 @@ export class HospitalDetailComponent implements OnInit {
           this.isUpdating = true;
         }
 
-        if(action == null){this.pageTitle = "Create hospital";}
-        else if(action == "detail"){
+        if(this.action == 'create'){this.pageTitle = "Create hospital";}
+        else if(this.action == "detail"){
           this.pageTitle = "Hospital detail";
-          this.formAction = "detail";
           this.disableControls = true;
         }
-        else if(action == "update"){
+        else if(this.action == "update"){
           this.pageTitle = "Update hospital ";
         }
     
      });
   }
+
+onSubmit() {
+    if(this.isUpdating){
+      this.hospitalService.updateHospital(this.hospital)
+      .subscribe({ 
+        next: (response) =>{
+          this.router.navigate(['/hospitals'])
+        },
+        error: (err) => {
+          console.error(err);
+          alert(`Error occured during update : ${err.status}`);
+          this.errorMessage = `Error occured during update : ${err.status}`;
+        }
+      });
+    }
+    else{
+      this.hospitalService.createHospital(this.hospital)
+      .subscribe({ 
+        next: (response) =>{
+          this.router.navigate(['/hospitals'])
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = `Error occured during insert : ${err.status}`;
+        }
+      });
+    }
+}
  
   updateClick() {
-    throw new Error('Method not implemented.');
+   this.action = "update";
+   this.pageTitle = "Update doctor";
+   this.disableControls = false;
   }
   
   navigateBack() {
+    this.action = "update";
+    this.pageTitle = "Update hospital";
     this.router.navigateByUrl('/hospitals');
   }
 

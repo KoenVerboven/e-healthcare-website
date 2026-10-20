@@ -13,5 +13,6 @@ export interface Patient {
   emergencyContactName: string;
   emergencyContactPhoneNumber: string;
   emergencyContactDescription: string;
+  
 }
 

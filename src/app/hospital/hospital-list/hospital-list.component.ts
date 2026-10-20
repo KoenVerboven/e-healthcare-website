@@ -42,4 +42,8 @@ export class HospitalListComponent implements OnInit {
       this.router.navigate(['/hospitaldetail/detail', id]) 
   }
 
+  addHospital() {
+    this.router.navigate(['/createhospital']);
+  }
+
 }

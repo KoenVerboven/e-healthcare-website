@@ -1,9 +1,9 @@
   <div class="pageTitle" >
       {{pageTitle}}
   </div>
-
+<form (ngSubmit)="onSubmit()" #doctorForm="ngForm" class="formClass">
    <div class="buttonBar" style="margin-top:10px">
-      @if(formAction == 'detail')
+      @if(action == 'detail')
       {
           <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
           <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
@@ -20,7 +20,7 @@
           <label class="form-label" style="float:right">Name *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="name" [(ngModel)]="hospital.name"  />
+          <input required maxlength="30"  class="form-control"  type="text" name="name"  [disabled]=disableControls  [(ngModel)]="hospital.name"  />
         </div>   
       </div>
       <div class="row">
@@ -28,7 +28,7 @@
           <label class="form-label" style="float:right">Address *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="address" [(ngModel)]="hospital.address"  />
+          <input required maxlength="30"  class="form-control"  type="text" name="address"  [disabled]=disableControls  [(ngModel)]="hospital.address"  />
         </div>   
       </div>
       <div class="row">
@@ -36,7 +36,7 @@
           <label class="form-label" style="float:right">PhoneNumber *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="phoneNumber" [(ngModel)]="hospital.phoneNumber"  />
+          <input required maxlength="30"  class="form-control"  type="text" name="phoneNumber"  [disabled]=disableControls  [(ngModel)]="hospital.phoneNumber"  />
         </div>   
       </div>
       <div class="row">
@@ -44,8 +44,8 @@
           <label class="form-label" style="float:right">Email *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="email" [(ngModel)]="hospital.email"  />
+          <input required maxlength="30"  class="form-control"  type="text" name="email"  [disabled]=disableControls  [(ngModel)]="hospital.email"  />
         </div>   
       </div>
-      
-   </div>
+    </div>
+    </form>

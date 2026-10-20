@@ -1,12 +1,13 @@
   <div class="pageTitle" >
       {{pageTitle}}
   </div>
-
+  <form (ngSubmit)="onSubmit()" #doctorForm="ngForm" class="formClass">
    <div class="buttonBar" style="margin-top:10px">
-      @if(formAction == 'detail')
+      @if(action == 'detail')
       {
           <button class="btn btn-light headerButton" type="button" (click)="navigateBack()">Go Back</button>
           <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
+          <button type="button" class="btn btn-light" style="color:red" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
       }
       @else {
           <button class="btn btn-success headerButton"  type="submit">Save</button>
@@ -20,7 +21,7 @@
           <label class="form-label" style="float:right">Last Name *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="lastName"   />
+          <input required maxlength="30"  class="form-control"  type="text" name="lastName" [disabled]=disableControls  [(ngModel)]="doctor.lastName"  />
         </div>   
       </div>
       <div class="row">
@@ -28,7 +29,7 @@
           <label class="form-label" style="float:right">First Name *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="firstName"  />
+          <input required maxlength="30"  class="form-control"  type="text" name="firstName" [disabled]=disableControls [(ngModel)]="doctor.firstName"  />
         </div>   
       </div>
       <div class="row">
@@ -36,7 +37,7 @@
           <label class="form-label" style="float:right">Address *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="address"  />
+          <input required maxlength="30"  class="form-control"  type="text" name="address" [disabled]=disableControls [(ngModel)]="doctor.address" />
         </div>   
       </div>
       <div class="row">
@@ -44,7 +45,7 @@
           <label class="form-label" style="float:right">PhoneNumber *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="phoneNumber"  />
+          <input required maxlength="30"  class="form-control"  type="text" name="phoneNumber" [disabled]=disableControls [(ngModel)]="doctor.phoneNumber" />
         </div>   
       </div>
       <div class="row">
@@ -52,8 +53,8 @@
           <label class="form-label" style="float:right">Email *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="email"  />
+          <input required maxlength="30"  class="form-control"  type="text" name="email"  [disabled]=disableControls [(ngModel)]="doctor.email" />
         </div>   
       </div>
-      
-   </div>
+    </div>
+  </form>

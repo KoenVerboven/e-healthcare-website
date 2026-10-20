@@ -13,9 +13,8 @@ import { PatientService } from '../services/patient.service'
   styleUrl: './patient-detail.component.css'
 })
 export class PatientDetailComponent implements OnInit {
-
   pageTitle: string = 'Patient Detail';
-  formAction: string = 'detail';
+  action: string = 'detail';
   isUpdating: boolean = false;
   disableControls: boolean = false;
   errorMessage : string = "";
@@ -31,7 +30,7 @@ export class PatientDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(result => {
         const id = result.get('id');
-        const action = result.get('action');
+       // const action = result.get('action');
         this.patientId = Number(id);
                
         if(id){
@@ -42,21 +41,50 @@ export class PatientDetailComponent implements OnInit {
           this.isUpdating = true;
         }
 
-        if(action == null){this.pageTitle = "Create patient";}
-        else if(action == "detail"){
-          this.pageTitle = "Patient detail";
-          this.formAction = "detail";
+        if(this.action == null){this.pageTitle = "Create patient";}
+        else if(this.action == "detail"){
+  
           this.disableControls = true;
         }
-        else if(action == "update"){
+        else if(this.action == "update"){
           this.pageTitle = "Update patient";
         }
     
      });
   }
 
+  onSubmit() {
+     if(this.isUpdating){
+      this.patientService.updatePatient(this.patient)
+      .subscribe({ 
+        next: (response) =>{
+          this.router.navigate(['/patients'])
+        },
+        error: (err) => {
+          console.error(err);
+          alert(`Error occured during update : ${err.status}`);
+          this.errorMessage = `Error occured during update : ${err.status}`;
+        }
+      });
+    }
+    else{
+      this.patientService.createPatient(this.patient)
+      .subscribe({ 
+        next: (response) =>{
+          this.router.navigate(['/patients'])
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = `Error occured during insert : ${err.status}`;
+        }
+      });
+    }
+  }
+
   updateClick() {
-    throw new Error('Method not implemented.');
+    this.action = "update";
+    this.pageTitle = "Update patient";
+    this.disableControls = false;
   }
 
   navigateBack() {
