@@ -31,9 +31,13 @@ export class HospitalDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(result => {
-        const id = result.get('id');
-       // const action = result.get('action');
+        const id = result.get('hospitalid');
+        const action = result.get('action');
         this.hospitalId = Number(id);
+        if(action != null)
+        {
+          this.action = action;
+        }
                
         if(id){
           this.hospitalService.getHospitalById(Number(id)).subscribe({

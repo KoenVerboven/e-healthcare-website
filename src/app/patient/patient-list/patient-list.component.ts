@@ -21,7 +21,7 @@ export class PatientListComponent implements OnInit {
    constructor(private patientService: PatientService, private router: Router){}
 
    ngOnInit(){
-        this.getPatients();
+      this.getPatients();
     }
        
     getPatients()
@@ -46,7 +46,7 @@ export class PatientListComponent implements OnInit {
     }
 
     addPatient() {
-      this.router.navigate(['/createpatient']);
+      this.router.navigate(['/patientdetail/create',0]);
     }
 
 }

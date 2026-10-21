@@ -29,9 +29,13 @@ export class PatientDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(result => {
-        const id = result.get('id');
-       // const action = result.get('action');
+        const id = result.get('patientid');
+        const action = result.get('action');
         this.patientId = Number(id);
+        if(action != null)
+        {
+          this.action = action;
+        }
                
         if(id){
           this.patientService.getPatientById(Number(id)).subscribe({
@@ -41,7 +45,7 @@ export class PatientDetailComponent implements OnInit {
           this.isUpdating = true;
         }
 
-        if(this.action == null){this.pageTitle = "Create patient";}
+        if(this.action == 'create'){this.pageTitle = "Create patient";}
         else if(this.action == "detail"){
   
           this.disableControls = true;

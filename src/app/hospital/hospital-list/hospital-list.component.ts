@@ -39,11 +39,11 @@ export class HospitalListComponent implements OnInit {
   }
 
   showHospitalDetail(id: number): void {
-      this.router.navigate(['/hospitaldetail/detail', id]) 
+     this.router.navigate(['/hospitaldetail/detail', id]) 
   }
 
   addHospital() {
-    this.router.navigate(['/createhospital']);
+     this.router.navigate(['/hospitaldetail/create',0]);
   }
 
 }

@@ -46,7 +46,7 @@ export class DoctorListComponent implements OnInit {
     }
 
   addDoctor() {
-      this.router.navigate(['/createdoctor'])
+      this.router.navigate(['/doctordetail/create',0])
   }
  
 }

@@ -15,7 +15,7 @@ import { DoctorService } from '../services/doctor.service'
 })
 export class DoctorDetailComponent implements OnInit {
   pageTitle: string |null = "";
-  action: string = 'detail';
+  action: string | null = "";
   isUpdating: boolean = false;
   disableControls: boolean = false;
   errorMessage : string = "";
@@ -30,9 +30,14 @@ export class DoctorDetailComponent implements OnInit {
 
   ngOnInit() {
      this.route.paramMap.subscribe(result => {
-        const id = result.get('id');
-       // const action = result.get('action');
+        const id = result.get('doctorid');
+        const action = result.get('action');
         this.doctorId = Number(id);
+        this.action = action;
+        if(action != null)
+        {
+          this.action = action;
+        }
                
         if(id){
           this.doctorService.getDoctorById(Number(id)).subscribe({
