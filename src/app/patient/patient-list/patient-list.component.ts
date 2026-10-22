@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Patient } from '../models/patient.model';
 import { PatientService } from '../services/patient.service';
-import { Router, RouterModule} from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-patient-list',
   standalone: true,
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule, MatProgressSpinnerModule],
   templateUrl: './patient-list.component.html',
   styleUrl: './patient-list.component.css'
 })
@@ -47,6 +49,14 @@ export class PatientListComponent implements OnInit {
 
     addPatient() {
       this.router.navigate(['/patientdetail/create',0]);
+    }
+
+    showMedicalRecord() {
+      throw new Error('Method not implemented.');
+    }
+
+    showAppointments() {
+      throw new Error('Method not implemented.');
     }
 
 }

@@ -16,3 +16,9 @@ export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
      provideRouter(routes),
      provideHttpClient()] /* don't forget to add the providers */   <------------
+
+
+toevoegen van  <mat-spinner diameter="70" strokeWidth="5"></mat-spinner> aan onze html-pagina's:
+Installeer eerst Angular Material:
+website : https://material.angular.dev/guide/getting-started
+ng add @angular/material

@@ -1,7 +1,21 @@
 <p class="pageTitle">Hospitals</p>
 <div class="buttonBar">
-    <button   style="float:left; margin-left: 15px;" class="btn btn-light" type="button" (click)="addHospital()"><i class="bi bi-plus"></i> Add New Hospital</button>
+    <button   style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="addHospital()"><i class="bi bi-plus"></i> Add New Hospital</button>
 </div>
+@if(error != "")
+{
+  <br/><br/><br/>  
+  <div class="errorLabel">{{error}}</div>
+}
+@if(loading)
+{
+  <div style="margin-left: 200px;">
+    <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
+       <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
+    </div>
+    <div>loading</div> 
+  </div>
+}
 <table class="table table-sm  table-hover table-striped" style="overflow:hidden; border-radius:5px;">
     <thead>
       <tr class="cell-hoverCursor">

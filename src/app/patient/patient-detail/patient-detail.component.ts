@@ -37,7 +37,7 @@ export class PatientDetailComponent implements OnInit {
           this.action = action;
         }
                
-        if(id){
+        if(id != "0"){
           this.patientService.getPatientById(Number(id)).subscribe({
             next: result => this.patient = result,
             error: err => this.errorMessage = `Error : (${err.status})`

@@ -1,4 +1,11 @@
-  <div class="pageTitle" >
+ @if(errorMessage != '')
+ {
+   <div  class="text-danger text-center">
+      {{errorMessage}}
+   </div>
+ }
+ 
+ <div class="pageTitle" >
       {{pageTitle}}
   </div>
 <form (ngSubmit)="onSubmit()" #doctorForm="ngForm" class="formClass">
@@ -15,7 +22,7 @@
    </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row detailDataRow" >
         <div class="col-2">
           <label class="form-label" style="float:right">Last Name *</label>    
         </div>
@@ -23,7 +30,7 @@
           <input required maxlength="30"  class="form-control"  type="text" name="lastName" [disabled]=disableControls [(ngModel)]="patient.lastName" />
         </div>   
       </div>
-      <div class="row">
+      <div class="row detailDataRow">
         <div class="col-2">
           <label class="form-label" style="float:right">First Name *</label>    
         </div>
@@ -31,7 +38,7 @@
           <input required maxlength="30"  class="form-control"  type="text" name="firstName" [disabled]=disableControls [(ngModel)]="patient.firstName" />
         </div>   
       </div>
-      <div class="row">
+      <div class="row detailDataRow">
         <div class="col-2">
           <label class="form-label" style="float:right">Address *</label>    
         </div>
@@ -39,7 +46,7 @@
           <input required maxlength="30"  class="form-control"  type="text" name="address" [disabled]=disableControls [(ngModel)]="patient.address" />
         </div>   
       </div>
-      <div class="row">
+      <div class="row detailDataRow">
         <div class="col-2">
           <label class="form-label" style="float:right">PhoneNumber *</label>    
         </div>
@@ -47,7 +54,7 @@
           <input required maxlength="30"  class="form-control"  type="text" name="phoneNumber" [disabled]=disableControls [(ngModel)]="patient.phoneNumber" />
         </div>   
       </div>
-      <div class="row">
+      <div class="row detailDataRow">
         <div class="col-2">
           <label class="form-label" style="float:right">Email *</label>    
         </div>

@@ -3,11 +3,12 @@ import { Doctor } from '../models/doctor.model';
 import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service';
 import { Router } from '@angular/router';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-doctor-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,MatProgressSpinnerModule],
   templateUrl: './doctor-list.component.html',
   styleUrl: './doctor-list.component.css'
 })
@@ -36,7 +37,6 @@ export class DoctorListComponent implements OnInit {
           this.error = 'An error has occurred. Please try again later.';
           console.log(error.message);
           this.loading = false;
-          alert(error.message);
         }
       );
     }

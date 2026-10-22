@@ -3,13 +3,14 @@ import { FormsModule } from '@angular/forms';
 import { Router,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Doctor } from '../models/doctor.model';
-import { DoctorService } from '../services/doctor.service'
+import { DoctorService } from '../services/doctor.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @Component({
   selector: 'app-doctor-detail',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, MatProgressSpinnerModule],
   templateUrl: './doctor-detail.component.html',
   styleUrl: './doctor-detail.component.css'
 })
@@ -39,7 +40,7 @@ export class DoctorDetailComponent implements OnInit {
           this.action = action;
         }
                
-        if(id){
+        if(id != "0"){
           this.doctorService.getDoctorById(Number(id)).subscribe({
             next: result => this.doctor = result,
             error: err => this.errorMessage = `Error : (${err.status})`
@@ -87,7 +88,6 @@ onSubmit() {
       });
     }
 }
-
 
  navigateBack() {
    this.router.navigateByUrl('/doctors');

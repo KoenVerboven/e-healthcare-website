@@ -1,6 +1,12 @@
-  <div class="pageTitle" >
+ @if(errorMessage != '')
+{
+   <div  class="text-danger text-center">
+      {{errorMessage}}
+   </div>
+}
+ <div class="pageTitle" >
       {{pageTitle}}
-  </div>
+ </div>
 <form (ngSubmit)="onSubmit()" #doctorForm="ngForm" class="formClass">
    <div class="buttonBar" style="margin-top:10px">
       @if(action == 'detail')
@@ -15,7 +21,7 @@
    </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row detailDataRow">
         <div class="col-2">
           <label class="form-label" style="float:right">Name *</label>    
         </div>
@@ -23,7 +29,7 @@
           <input required maxlength="30"  class="form-control"  type="text" name="name"  [disabled]=disableControls  [(ngModel)]="hospital.name"  />
         </div>   
       </div>
-      <div class="row">
+      <div class="row detailDataRow">
         <div class="col-2">
           <label class="form-label" style="float:right">Address *</label>    
         </div>
@@ -31,7 +37,7 @@
           <input required maxlength="30"  class="form-control"  type="text" name="address"  [disabled]=disableControls  [(ngModel)]="hospital.address"  />
         </div>   
       </div>
-      <div class="row">
+      <div class="row  detailDataRow">
         <div class="col-2">
           <label class="form-label" style="float:right">PhoneNumber *</label>    
         </div>
@@ -39,7 +45,7 @@
           <input required maxlength="30"  class="form-control"  type="text" name="phoneNumber"  [disabled]=disableControls  [(ngModel)]="hospital.phoneNumber"  />
         </div>   
       </div>
-      <div class="row">
+      <div class="row detailDataRow">
         <div class="col-2">
           <label class="form-label" style="float:right">Email *</label>    
         </div>

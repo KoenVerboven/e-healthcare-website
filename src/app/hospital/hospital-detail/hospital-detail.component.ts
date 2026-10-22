@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router,ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Hospital } from '../models/hospital.model';
-import { HospitalService } from '../services/hospital.service'
+import { HospitalService } from '../services/hospital.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-hospital-detail',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [CommonModule,RouterModule, FormsModule, MatProgressSpinnerModule],
   templateUrl: './hospital-detail.component.html',
   styleUrl: './hospital-detail.component.css'
 })
@@ -39,7 +40,7 @@ export class HospitalDetailComponent implements OnInit {
           this.action = action;
         }
                
-        if(id){
+        if(id != "0"){
           this.hospitalService.getHospitalById(Number(id)).subscribe({
             next: result => this.hospital = result,
             error: err => this.errorMessage = `Error : (${err.status})`
