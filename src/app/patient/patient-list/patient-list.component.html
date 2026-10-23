@@ -1,9 +1,16 @@
 <p class="pageTitle">Patients</p>
 <div class="buttonBar">
     <button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="addPatient()"><i class="bi bi-plus"></i> Add New Patient</button>
-     <button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="showAppointments()">Show Appointments</button>
-    <button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="showMedicalRecord()">Show Medical Record</button>
-</div>
+    <button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="showAppointments()"><i class="bi bi-calendar-check"></i>  Appointments</button>
+    <button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="showMedicalRecord()"><i class="bi bi-clipboard-pulse"></i> Medical Record</button>
+    <button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="showInvoices()"><i class="bi bi-currency-exchange"></i> Invoices</button>
+  </div>
+
+  <div  class="buttonBar">
+    <input type="text"  placeholder="patient name" style="float:left;width: 300px;margin-left:20px;margin-right: 10px;">
+    <button  style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" ><i class="bi bi-search"></i> Search</button>
+    <button  style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" ><i class="bi bi-x-lg"></i> Clear Search</button>
+  </div>
 @if(error != "")
 {
   <br/><br/><br/>  

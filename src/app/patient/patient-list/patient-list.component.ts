@@ -59,4 +59,8 @@ export class PatientListComponent implements OnInit {
       throw new Error('Method not implemented.');
     }
 
+    showInvoices() {
+      throw new Error('Method not implemented.');
+    }
+
 }
