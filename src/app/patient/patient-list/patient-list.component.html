@@ -5,26 +5,13 @@
     <button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="showMedicalRecord()"><i class="bi bi-clipboard-pulse"></i> Medical Record</button>
     <button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="showInvoices()"><i class="bi bi-currency-exchange"></i> Invoices</button>
   </div>
-
   <div  class="buttonBar">
-    <input type="text"  placeholder="patient name" style="float:left;width: 300px;margin-left:20px;margin-right: 10px;">
-    <button  style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" ><i class="bi bi-search"></i> Search</button>
+    <input type="text"  placeholder="Lastname"  [(ngModel)]="patientSpecParams.lastName"  style="float:left;width: 300px;margin-left:20px;margin-right: 10px;">
+    <input type="text"  placeholder="Firstname"  [(ngModel)]="patientSpecParams.firstName"  style="float:left;width: 300px;margin-left:20px;margin-right: 10px;">
+    <button  style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="getStudentsByFilter()" ><i class="bi bi-search"></i> Search</button>
     <button  style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" ><i class="bi bi-x-lg"></i> Clear Search</button>
   </div>
-@if(error != "")
-{
-  <br/><br/><br/>  
-  <div class="errorLabel">{{error}}</div>
-}
-@if(loading)
-{
-  <div style="margin-left: 200px;">
-    <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
-       <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
-    </div>
-    <div>loading</div> 
-  </div>
-}
+
 <table class="table table-sm  table-hover table-striped" style="overflow:hidden; border-radius:5px;">
     <thead>
       <tr class="cell-hoverCursor">
@@ -47,3 +34,17 @@
       }
     </tbody>
   </table>
+@if(error != "")
+{
+  <br/><br/><br/>  
+  <div class="errorLabel">{{error}}</div>
+}
+@if(loading)
+{
+  <div style="margin-left: 200px;">
+    <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%;">
+       <mat-spinner diameter="70" strokeWidth="5"></mat-spinner>
+    </div>
+    <div>loading</div> 
+  </div>
+}
