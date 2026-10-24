@@ -25,10 +25,9 @@ export class PatientListComponent implements OnInit {
    constructor(private patientService: PatientService, private router: Router){}
 
    ngOnInit(){
-      //this.getPatients();
-    }
+   }
        
-    getPatients()
+    getAllPatients()
     {
       this.loading = true; 
       this.patientService.getPatients().subscribe(patientsFromApi =>{
@@ -40,7 +39,6 @@ export class PatientListComponent implements OnInit {
           this.error = 'An error has occurred. Please try again later.';
           console.log(error.message);
           this.loading = false;
-          alert(error.message);
         }
       );
     }
@@ -51,6 +49,7 @@ export class PatientListComponent implements OnInit {
       this.patientService.getPatienByFilter(this.patientSpecParams.lastName,this.patientSpecParams.firstName,'lastname', 10,1).subscribe((data: Patient[]) => {
            this.patients = data;
            this.loading = false;
+           this.patientsCount = this.patients.length;
         },
           error => {
             this.error = error.message;
@@ -59,8 +58,11 @@ export class PatientListComponent implements OnInit {
             this.loading = false;
         }
       );
-  
-     }
+    }
+
+    clearSearch() {
+       
+    }
     
     showPatientDetail(id: number): void {
       this.router.navigate(['/patientdetail/detail', id]) 

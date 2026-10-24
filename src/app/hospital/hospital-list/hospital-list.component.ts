@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HospitalService } from '../services/hospital.service';
 import { Router , RouterModule} from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { DoctorSpecParams } from '../../doctor/models/doctorSpecParams.model';
 
 @Component({
   selector: 'app-hospital-list',

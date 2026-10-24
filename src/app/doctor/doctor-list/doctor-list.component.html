@@ -1,7 +1,14 @@
 <p class="pageTitle">Doctors</p>
 <div class="buttonBar">
-    <button   style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="addDoctor()"><i class="bi bi-plus"></i> Add New Doctor</button>
+    <button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="addDoctor()"><i class="bi bi-plus"></i> Add New Doctor</button>
 </div>
+<div  class="buttonBar">
+    <input type="text"  placeholder="Lastname"  [(ngModel)]="doctorSpecParams.lastName"  style="float:left;width: 300px;margin-left:20px;margin-right: 10px;">
+    <input type="text"  placeholder="Firstname"  [(ngModel)]="doctorSpecParams.firstName"  style="float:left;width: 300px;margin-left:20px;margin-right: 10px;">
+    <button  style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="getDoctorsByFilter()" ><i class="bi bi-search"></i> Search</button>
+    <button  style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="clearSearch()"><i class="bi bi-x-lg"></i> Clear Search</button>
+    <label style="float: right;">{{doctorsCount}} patients found</label>
+  </div>
 <table class="table table-sm  table-hover table-striped" style="overflow:hidden; border-radius:5px;">
     <thead>
       <tr class="cell-hoverCursor">

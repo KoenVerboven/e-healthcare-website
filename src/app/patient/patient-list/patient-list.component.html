@@ -9,7 +9,8 @@
     <input type="text"  placeholder="Lastname"  [(ngModel)]="patientSpecParams.lastName"  style="float:left;width: 300px;margin-left:20px;margin-right: 10px;">
     <input type="text"  placeholder="Firstname"  [(ngModel)]="patientSpecParams.firstName"  style="float:left;width: 300px;margin-left:20px;margin-right: 10px;">
     <button  style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="getStudentsByFilter()" ><i class="bi bi-search"></i> Search</button>
-    <button  style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" ><i class="bi bi-x-lg"></i> Clear Search</button>
+    <button  style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="clearSearch()"><i class="bi bi-x-lg"></i> Clear Search</button>
+    <label style="float: right;">{{patientsCount}} patients found</label>
   </div>
 
 <table class="table table-sm  table-hover table-striped" style="overflow:hidden; border-radius:5px;">

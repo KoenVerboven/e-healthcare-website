@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environments';
 import {Observable} from 'rxjs';
@@ -32,4 +32,15 @@ export class DoctorService {
   updateDoctor(doctor: Doctor):Observable<Doctor>{
     return this.http.put<Doctor>(`${this.apiUrl}/${doctor.id}`,doctor );
   }
+
+   getDoctorFilter(lastname:string,firstname:string, sort:string, pagesize: number, pagenumber: number)
+     {
+      let params = new HttpParams();
+        params = params.set('lastname',lastname);
+        params = params.set('firstname',firstname);
+        params = params.set('sort',sort);
+        params = params.set('pagesize',pagesize);
+        params = params.set('pagenumber',pagenumber);
+        return this.http.get<Doctor[]>(`${this.apiUrl}/getDoctorByFilter`,{params: params});
+     } 
 }
