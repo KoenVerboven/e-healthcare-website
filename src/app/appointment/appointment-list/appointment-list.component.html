@@ -1,1 +1,24 @@
-<p>appointment-list works!</p>
+<p class="pageTitle">{{PageTitle}}</p>
+<div class="buttonBar">
+    <button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="addAppointment()" ><i class="bi bi-plus"></i> Add Appointment</button>
+</div>
+
+<table class="table table-sm  table-hover table-striped" style="overflow:hidden; border-radius:5px;">
+    <thead>
+      <tr class="cell-hoverCursor">
+         <th class="p-2" style="width: 20%;text-align:left;">Patient</th>
+         <th class="p-2" style="width: 20%;text-align:left;">Doctor</th>
+         <th class="p-2" style="width: 20%;text-align:left;">Date</th>
+         <th class="p-2" style="width: 20%;text-align:left;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+        <tr class="cell-hoverCursor" >
+          <td class="p-2" style="text-align: left;">Peeters Mark 4/5/1967</td>
+          <td class="p-2" style="text-align: left;">Dr Janssens Dirk</td>
+          <td class="p-2" style="text-align: left;">6/6/2028 8:45</td>
+          <td class="p-2" style="text-align: left;">planned</td>
+        </tr>
+    </tbody>
+  </table>

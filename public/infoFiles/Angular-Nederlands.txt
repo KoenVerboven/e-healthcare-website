@@ -22,3 +22,5 @@ toevoegen van  <mat-spinner diameter="70" strokeWidth="5"></mat-spinner> aan onz
 Installeer eerst Angular Material:
 website : https://material.angular.dev/guide/getting-started
 ng add @angular/material
+
+C:\Users\koenv\source\repos\e-healthcare-website>ng g c appointment\appointment-detail

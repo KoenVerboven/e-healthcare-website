@@ -73,7 +73,7 @@ export class PatientListComponent implements OnInit {
     }
 
     showMedicalRecord() {
-      throw new Error('Method not implemented.');
+      this.router.navigate(['/medicalrecordswitchboard']) 
     }
 
     showAppointments() {
