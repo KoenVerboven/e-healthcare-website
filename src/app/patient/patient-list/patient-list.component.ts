@@ -17,10 +17,11 @@ import { PatientSpecParams } from '../models/patientSpecParams.model';
 export class PatientListComponent implements OnInit {
   PageTitle: string = 'Patient List';
   patients: Patient[] =[];
-  patientsCount = 0;
+  patientsCount = -1;
+  list: number[] = [];
   loading = false;
   error = '';
-  patientSpecParams : PatientSpecParams = {lastName : '',firstName: '', sort:'', pageSize: 10, pageNumber: 1}
+  patientSpecParams : PatientSpecParams = {lastName : '',firstName: '', sort:'', pageSize: 3, pageNumber: 1}
 
    constructor(private patientService: PatientService, private router: Router){}
 
@@ -46,10 +47,26 @@ export class PatientListComponent implements OnInit {
     getStudentsByFilter()
     {
       this.loading = true;
-      this.patientService.getPatienByFilter(this.patientSpecParams.lastName,this.patientSpecParams.firstName,'lastname', 10,1).subscribe((data: Patient[]) => {
+  
+      //this.patientService.get //todo
+      //this.patientsCount = 8; //todo
+
+      this.patientService.getPatientByFilterCount(this.patientSpecParams.lastName,this.patientSpecParams.firstName).subscribe((data: number) => {
+          this.patientsCount = data;
+        },
+        error => {
+          this.error = 'An error has occurred. Please try again later.';
+          console.log(error.message);
+          this.loading = false;
+        }
+      );
+
+
+      this.patientService.getPatienByFilter(this.patientSpecParams.lastName,this.patientSpecParams.firstName,'lastname', this.patientSpecParams.pageSize,this.patientSpecParams.pageNumber).subscribe((data: Patient[]) => {
            this.patients = data;
            this.loading = false;
-           this.patientsCount = this.patients.length;
+           //this.patientsCount = this.patients.length;
+           this.list = new Array(Math.ceil(this.patientsCount/this.patientSpecParams.pageSize))
         },
           error => {
             this.error = error.message;
@@ -82,6 +99,65 @@ export class PatientListComponent implements OnInit {
 
     showInvoices() {
       throw new Error('Method not implemented.');
+    }
+
+    getPage(pageNumber: number)
+    {
+      this.patientSpecParams.pageNumber = pageNumber;
+      this.patientService.getPatienByFilter(this.patientSpecParams.lastName,this.patientSpecParams.firstName,'lastname', this.patientSpecParams.pageSize,this.patientSpecParams.pageNumber).subscribe((data: Patient[]) => {
+            this.patients = data;
+            this.list = new Array(Math.ceil(this.patientsCount/this.patientSpecParams.pageSize))
+            console.log(this.list);
+            this.loading = false;
+          },
+          error => {
+            this.error = 'An error has occurred. Please try again later.';
+            console.log(error.message);
+            this.loading = false;
+          }
+      );
+  }
+   
+    getPrevPage() {
+      if(this.patientSpecParams.pageNumber -1 < 1)
+      {
+        return;
+      }
+
+      this.patientSpecParams.pageNumber -= 1;
+      this.patientService.getPatienByFilter(this.patientSpecParams.lastName,this.patientSpecParams.firstName,'lastname', this.patientSpecParams.pageSize,this.patientSpecParams.pageNumber).subscribe((data: Patient[]) => {
+            this.patients = data;
+            this.list = new Array(Math.ceil(this.patientsCount/this.patientSpecParams.pageSize))
+            console.log(this.list);
+            this.loading = false;
+          },
+          error => {
+            this.error = 'An error has occurred. Please try again later.';
+            console.log(error.message);
+            this.loading = false;
+          }
+      );
+    }
+
+     getNextPage() {
+       if(this.patientSpecParams.pageNumber +1 > this.list.length)
+        {
+          return;
+        }
+
+        this.patientSpecParams.pageNumber += 1;
+        this.patientService.getPatienByFilter(this.patientSpecParams.lastName,this.patientSpecParams.firstName,'lastname', this.patientSpecParams.pageSize,this.patientSpecParams.pageNumber).subscribe((data: Patient[]) => {
+              this.patients = data;
+              this.list = new Array(Math.ceil(this.patientsCount/this.patientSpecParams.pageSize))
+              console.log(this.list);
+              this.loading = false;
+            },
+            error => {
+              this.error = 'An error has occurred. Please try again later.';
+              console.log(error.message);
+              this.loading = false;
+            }
+        );
     }
 
 }

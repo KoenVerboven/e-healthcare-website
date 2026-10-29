@@ -1,0 +1,8 @@
+.paginationSelected{
+    color:rgb(15, 15, 15);
+    background-color: rgb(154, 233, 233);
+}
+.paginationNotSelected{
+    background-color: rgb(244, 247, 250);
+    color:black;
+}

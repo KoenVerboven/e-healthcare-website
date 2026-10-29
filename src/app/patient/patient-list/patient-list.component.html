@@ -35,6 +35,22 @@
       }
     </tbody>
   </table>
+ <nav aria-label="Page navigation">
+    <ul class="pagination">
+      @if(patientSpecParams.pageNumber > 1)
+      {
+        <li class="page-item"><a class="page-link" (click)="getPrevPage()">Previous</a></li>
+      }
+      @for( item of list;track item; let i=  $index){
+        <li class="page-item"><a class="page-link paginationSelected" [ngClass]="i + 1 == patientSpecParams.pageNumber ? 'paginationSelected' : 'paginationNotSelected'"  (click)="getPage(i + 1)">{{i + 1}}</a></li>
+      }
+      @if(patientSpecParams.pageNumber < list.length)
+      {
+        <li class="page-item"><a class="page-link" (click)="getNextPage()">Next</a></li>
+      }
+    </ul>
+  </nav>
+
 @if(error != "")
 {
   <br/><br/><br/>  

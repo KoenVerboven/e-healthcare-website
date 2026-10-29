@@ -23,7 +23,7 @@ export const routes: Routes = [
   {path: 'hospitaldetail/:action/:hospitalid', component: HospitalDetailComponent},
   {path: 'patientdetail/:action/:patientid', component: PatientDetailComponent},
   {path: 'doctordetail/:action/:doctorid', component: DoctorDetailComponent},
-  {path: 'appointmentdetal/:action/appointmentid', component: AppointmentDetailComponent}
+  {path: 'appointmentdetail/:action/:appointmentid', component: AppointmentDetailComponent}
 
 ];
 

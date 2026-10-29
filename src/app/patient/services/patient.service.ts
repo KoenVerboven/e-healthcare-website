@@ -35,13 +35,21 @@ export class PatientService {
 
    getPatienByFilter(lastname:string,firstname:string, sort:string, pagesize: number, pagenumber: number)
    {
-    let params = new HttpParams();
+      let params = new HttpParams();
       params = params.set('lastname',lastname);
       params = params.set('firstname',firstname);
       params = params.set('sort',sort);
       params = params.set('pagesize',pagesize);
       params = params.set('pagenumber',pagenumber);
       return this.http.get<Patient[]>(`${this.apiUrl}/getPatientByFilter`,{params: params});
+   } 
+
+   getPatientByFilterCount(lastname:string,firstname:string)
+   {
+      let params = new HttpParams();
+      params = params.set('lastname',lastname);
+      params = params.set('firstname',firstname);
+      return this.http.get<number>(`${this.apiUrl}/getPatientsByFilterCount`,{params: params});
    } 
  
 }
