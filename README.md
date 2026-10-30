@@ -26,7 +26,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
-## Print Screen
+## To run the Application :
+
+1/Install Sql-Server on your PC.
+
+2/ Run the back-end API ( https://github.com/KoenVerboven/EHealth ) in Visual Studio.
+
+3/Open the e-health-Website in Visual Studio Code and run `ng serve --open` in cmd-terminal.
+
+
+## Print Screens
 
 <img width="1916" height="657" alt="image" src="https://github.com/user-attachments/assets/02bd16d8-c245-4ad0-a538-4372b2895b4f" />
 
