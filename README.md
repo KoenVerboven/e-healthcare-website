@@ -11,7 +11,14 @@
 
 4/Run the WebApi
 
-5/Open the e-health-Website in Visual Studio Code and run `ng serve --open` in cmd-terminal.
+5/Open the e-health-Website in Visual Studio Code
+
+6/check the apiUrl in environments.ts :
+
+ <img width="477" height="362" alt="image" src="https://github.com/user-attachments/assets/3ef0cd3f-2d0b-4966-9c25-04b25bcddc4f" />
+
+
+ 7/run the website : cmd-terminal :  `ng serve --open`
 
 
 ## Print Screens
