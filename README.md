@@ -1,32 +1,27 @@
-# EHealthcareWebsite
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.1.
+## To run the Application :
 
-## Development server
+1/Install Sql-Server on your PC.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2/ Open the  WebApi ( https://github.com/KoenVerboven/EHealth ) in Visual Studio.
 
-## Code scaffolding
+3/Adjust the file appsettings.json (from the WebApi) with:
+   your ConnectionStrings
+   your Automapper license key
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+4/Run the WebApi
 
-## Build
+5/Open the e-health-Website in Visual Studio Code
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+6/check the apiUrl in environments.ts :
 
-## Running unit tests
+ <img width="477" height="362" alt="image" src="https://github.com/user-attachments/assets/3ef0cd3f-2d0b-4966-9c25-04b25bcddc4f" />
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+ 7/run the website : cmd-terminal :  `ng serve --open`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-## Print Screen
+## Print Screens
 
 <img width="1916" height="657" alt="image" src="https://github.com/user-attachments/assets/02bd16d8-c245-4ad0-a538-4372b2895b4f" />
 
