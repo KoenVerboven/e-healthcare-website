@@ -47,10 +47,6 @@ export class PatientListComponent implements OnInit {
     getStudentsByFilter()
     {
       this.loading = true;
-  
-      //this.patientService.get //todo
-      //this.patientsCount = 8; //todo
-
       this.patientService.getPatientByFilterCount(this.patientSpecParams.lastName,this.patientSpecParams.firstName).subscribe((data: number) => {
           this.patientsCount = data;
         },
@@ -65,7 +61,6 @@ export class PatientListComponent implements OnInit {
       this.patientService.getPatienByFilter(this.patientSpecParams.lastName,this.patientSpecParams.firstName,'lastname', this.patientSpecParams.pageSize,this.patientSpecParams.pageNumber).subscribe((data: Patient[]) => {
            this.patients = data;
            this.loading = false;
-           //this.patientsCount = this.patients.length;
            this.list = new Array(Math.ceil(this.patientsCount/this.patientSpecParams.pageSize))
         },
           error => {
@@ -78,7 +73,7 @@ export class PatientListComponent implements OnInit {
     }
 
     clearSearch() {
-       
+      
     }
     
     showPatientDetail(id: number): void {
@@ -104,39 +99,16 @@ export class PatientListComponent implements OnInit {
     getPage(pageNumber: number)
     {
       this.patientSpecParams.pageNumber = pageNumber;
-      this.patientService.getPatienByFilter(this.patientSpecParams.lastName,this.patientSpecParams.firstName,'lastname', this.patientSpecParams.pageSize,this.patientSpecParams.pageNumber).subscribe((data: Patient[]) => {
-            this.patients = data;
-            this.list = new Array(Math.ceil(this.patientsCount/this.patientSpecParams.pageSize))
-            console.log(this.list);
-            this.loading = false;
-          },
-          error => {
-            this.error = 'An error has occurred. Please try again later.';
-            console.log(error.message);
-            this.loading = false;
-          }
-      );
-  }
+      this.getPatientByFilter();
+    }
    
     getPrevPage() {
       if(this.patientSpecParams.pageNumber -1 < 1)
       {
         return;
       }
-
       this.patientSpecParams.pageNumber -= 1;
-      this.patientService.getPatienByFilter(this.patientSpecParams.lastName,this.patientSpecParams.firstName,'lastname', this.patientSpecParams.pageSize,this.patientSpecParams.pageNumber).subscribe((data: Patient[]) => {
-            this.patients = data;
-            this.list = new Array(Math.ceil(this.patientsCount/this.patientSpecParams.pageSize))
-            console.log(this.list);
-            this.loading = false;
-          },
-          error => {
-            this.error = 'An error has occurred. Please try again later.';
-            console.log(error.message);
-            this.loading = false;
-          }
-      );
+      this.getPatientByFilter();
     }
 
      getNextPage() {
@@ -144,9 +116,13 @@ export class PatientListComponent implements OnInit {
         {
           return;
         }
-
         this.patientSpecParams.pageNumber += 1;
-        this.patientService.getPatienByFilter(this.patientSpecParams.lastName,this.patientSpecParams.firstName,'lastname', this.patientSpecParams.pageSize,this.patientSpecParams.pageNumber).subscribe((data: Patient[]) => {
+        this.getPatientByFilter();
+    }
+
+    getPatientByFilter()
+    {
+      this.patientService.getPatienByFilter(this.patientSpecParams.lastName,this.patientSpecParams.firstName,'lastname', this.patientSpecParams.pageSize,this.patientSpecParams.pageNumber).subscribe((data: Patient[]) => {
               this.patients = data;
               this.list = new Array(Math.ceil(this.patientsCount/this.patientSpecParams.pageSize))
               console.log(this.list);
@@ -159,5 +135,6 @@ export class PatientListComponent implements OnInit {
             }
         );
     }
+
 
 }
