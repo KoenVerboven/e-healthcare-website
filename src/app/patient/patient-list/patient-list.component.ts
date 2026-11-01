@@ -71,18 +71,6 @@ export class PatientListComponent implements OnInit {
       this.router.navigate(['/patientdetail/create',0]);
     }
 
-    showMedicalRecord() {
-      this.router.navigate(['/medicalrecordswitchboard']) 
-    }
-
-    showAppointments() {
-      throw new Error('Method not implemented.');
-    }
-
-    showInvoices() {
-      throw new Error('Method not implemented.');
-    }
-
     getPage(pageNumber: number)
     {
       this.patientSpecParams.pageNumber = pageNumber;

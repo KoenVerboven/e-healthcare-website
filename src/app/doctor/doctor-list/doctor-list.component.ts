@@ -25,7 +25,16 @@ export class DoctorListComponent implements OnInit {
   constructor(private doctorService: DoctorService, private router: Router){}
   
   ngOnInit(){
-      this.getDoctors();
+     this.doctorService.searchLastNameText.subscribe({
+          next:(data) =>{
+            this.doctorSpecParams.lastName = data;
+          }
+    });
+     this.doctorService.searchFirstNameText.subscribe({
+          next:(data) =>{
+            this.doctorSpecParams.firstName = data;
+          }
+    });
   }
   
    getDoctors()
@@ -62,15 +71,17 @@ export class DoctorListComponent implements OnInit {
     }
 
     clearSearch() {
-      throw new Error('Method not implemented.');
+      this.doctorService.searchLastNameText.next('');
+      this.doctorService.searchFirstNameText.next('');
+      this.doctorsCount = -1;
     }
 
     showDoctorDetail(id: number): void {
       this.router.navigate(['/doctordetail/detail', id]) 
     }
 
-  addDoctor() {
+    addDoctor() {
       this.router.navigate(['/doctordetail/create',0])
-  }
+    }
  
 }

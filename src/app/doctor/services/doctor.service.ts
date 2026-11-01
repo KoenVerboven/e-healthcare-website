@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environments';
-import {Observable} from 'rxjs';
+import { BehaviorSubject, Observable} from 'rxjs';
 import {Doctor} from '../models/doctor.model';
 
 @Injectable({
@@ -9,6 +9,8 @@ import {Doctor} from '../models/doctor.model';
 })
 export class DoctorService {
 
+  public searchLastNameText = new BehaviorSubject<string>('');
+  public searchFirstNameText = new BehaviorSubject<string>('');
   private apiUrl = `${environment.apiUrl}/doctor`;
 
   constructor(private http: HttpClient) { }
