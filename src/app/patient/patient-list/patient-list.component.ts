@@ -89,6 +89,7 @@ export class PatientListComponent implements OnInit {
       this.patients = [];
       this.list = [];
       this.patientSpecParams.pageNumber = 0;
+      this.message = '';
     }
     
     showPatientDetail(id: number): void {
@@ -130,6 +131,7 @@ export class PatientListComponent implements OnInit {
               this.list = new Array(Math.ceil(this.patientsCount/this.patientSpecParams.pageSize))
               console.log(this.list);
               this.loading = false;
+              this.message = '';
             },
             error => {
               this.error = 'An error has occurred. Please try again later.';

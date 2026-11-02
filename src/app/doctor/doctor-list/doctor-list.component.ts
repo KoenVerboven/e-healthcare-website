@@ -71,6 +71,7 @@ export class DoctorListComponent implements OnInit {
            this.doctors = data;
            this.loading = false;
             this.doctorsCount = this.doctors.length;
+            this.message = '';
           },
           error => {
              this.error = error.message;
@@ -86,6 +87,7 @@ export class DoctorListComponent implements OnInit {
       this.doctorService.searchFirstNameText.next('');
       this.doctorsCount = -1;
       this.doctors = [];
+      this.message = '';
     }
 
     showDoctorDetail(id: number): void {
