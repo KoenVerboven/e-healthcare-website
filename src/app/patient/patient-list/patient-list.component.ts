@@ -17,15 +17,26 @@ import { PatientSpecParams } from '../models/patientSpecParams.model';
 export class PatientListComponent implements OnInit {
   PageTitle: string = 'Patient List';
   patients: Patient[] =[];
-  patientsCount = -1;
+  patientsCount = 0;
   list: number[] = [];
   loading = false;
   error = '';
-  patientSpecParams : PatientSpecParams = {lastName : '',firstName: '', sort:'', pageSize: 3, pageNumber: 1}
+  message = '';
+  patientSpecParams : PatientSpecParams = {lastName : '',firstName: '', sort:'', pageSize: 3, pageNumber: 0}
 
    constructor(private patientService: PatientService, private router: Router){}
 
    ngOnInit(){
+        this.patientService.searchLastNameText.subscribe({
+          next:(data) =>{
+            this.patientSpecParams.lastName = data;
+          }
+    });
+     this.patientService.searchFirstNameText.subscribe({
+          next:(data) =>{
+            this.patientSpecParams.firstName = data;
+          }
+    });
    }
        
     getAllPatients()
@@ -47,6 +58,17 @@ export class PatientListComponent implements OnInit {
     getPatientsByFilter()
     {
       this.loading = true;
+      if(this.patientSpecParams.lastName == '' && this.patientSpecParams.firstName == '')
+      {
+        this.patientsCount = 0;
+        this.patients = [];
+        this.list = [];
+        this.patientSpecParams.pageNumber = 0;
+        this.loading = false;
+        this.message = 'Please enter a search criteria.';
+        return;
+      }
+
       this.patientService.getPatientByFilterCount(this.patientSpecParams.lastName,this.patientSpecParams.firstName).subscribe((data: number) => {
           this.patientsCount = data;
         },
@@ -56,11 +78,17 @@ export class PatientListComponent implements OnInit {
           this.loading = false;
         }
       );
+      this.patientSpecParams.pageNumber = 1;
       this.getPatientByFilter();
     }
 
     clearSearch() {
-      
+      this.patientService.searchLastNameText.next('');
+      this.patientService.searchFirstNameText.next('');
+      this.patientsCount = 0;
+      this.patients = [];
+      this.list = [];
+      this.patientSpecParams.pageNumber = 0;
     }
     
     showPatientDetail(id: number): void {

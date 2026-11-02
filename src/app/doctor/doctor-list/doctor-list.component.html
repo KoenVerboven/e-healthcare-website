@@ -32,6 +32,11 @@
   <br/><br/><br/>  
   <div class="errorLabel">{{error}}</div>
 }
+@if(message != "")
+{
+  <br/>  
+  <div class="messageLabel">{{message}}</div>
+}
 @if(loading)
 {
   <div style="margin-left: 200px;">

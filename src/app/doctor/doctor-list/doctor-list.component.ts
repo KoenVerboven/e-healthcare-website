@@ -20,12 +20,13 @@ export class DoctorListComponent implements OnInit {
   doctorsCount = 0;
   loading = false;
   error = '';
+  message = '';
   doctorSpecParams : DoctorSpecParams = {lastName : '',firstName: '', sort:'', pageSize: 10, pageNumber: 1}
 
   constructor(private doctorService: DoctorService, private router: Router){}
   
   ngOnInit(){
-     this.doctorService.searchLastNameText.subscribe({
+    this.doctorService.searchLastNameText.subscribe({
           next:(data) =>{
             this.doctorSpecParams.lastName = data;
           }
@@ -56,6 +57,16 @@ export class DoctorListComponent implements OnInit {
     getDoctorsByFilter()
     {
        this.loading = true;
+       if(this.doctorSpecParams.lastName == '' && this.doctorSpecParams.firstName == '')
+      {
+        this.doctorsCount = -1;
+        this.doctors = [];
+        //this.list = [];
+        this.doctorSpecParams.pageNumber = 0;
+        this.loading = false;
+        this.message = 'Please enter a search criteria.';
+        return;
+      }
        this.doctorService.getDoctorFilter(this.doctorSpecParams.lastName,this.doctorSpecParams.firstName,'lastname', 10,1).subscribe((data: Doctor[]) => {
            this.doctors = data;
            this.loading = false;
@@ -74,6 +85,7 @@ export class DoctorListComponent implements OnInit {
       this.doctorService.searchLastNameText.next('');
       this.doctorService.searchFirstNameText.next('');
       this.doctorsCount = -1;
+      this.doctors = [];
     }
 
     showDoctorDetail(id: number): void {
