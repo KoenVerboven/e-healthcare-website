@@ -1,5 +1,6 @@
 <p class="pageTitle">{{PageTitle}}</p>
 <div class="buttonBar">
+    <button  style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="getAppointmentsByFilter()" ><i class="bi bi-search"></i> Search</button>
     <button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button" (click)="addAppointment()" ><i class="bi bi-plus"></i> Add Appointment</button>
 </div>
 
@@ -13,12 +14,13 @@
       </tr>
     </thead>
     <tbody>
-        
+        @for(appointment of appointments; track appointment.id) {
         <tr class="cell-hoverCursor" >
-          <td class="p-2" style="text-align: left;">Peeters Mark 4/5/1967</td>
-          <td class="p-2" style="text-align: left;">Dr Janssens Dirk</td>
-          <td class="p-2" style="text-align: left;">6/6/2028 8:45</td>
-          <td class="p-2" style="text-align: left;">planned</td>
+          <td class="p-2" style="text-align: left;">{{appointment.patientLastName}} {{appointment.patientFirstName}} ({{appointment.patientDateOfBirth | date:'dd/MM/yyyy'}})</td>
+          <td class="p-2" style="text-align: left;">{{appointment.doctorLastName}} {{appointment.doctorFirstName}}</td>
+          <td class="p-2" style="text-align: left;">{{appointment.appointmentDate | date:'dd/MM/yyyy HH:mm'}}</td>
+          <td class="p-2" style="text-align: left;">{{appointment.status}}</td>
         </tr>
+      }
     </tbody>
   </table>

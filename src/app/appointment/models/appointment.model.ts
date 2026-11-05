@@ -1,8 +1,11 @@
 export interface Appointment {
   id:number;
   patientid : number;
-  startdate: Date;
+  patientLastName: string;
+  patientFirstName: string;
+  patientDateOfBirth: Date;
+  doctorLastName: string;
+  doctorFirstName: string;
+  appointmentDate: Date;
   status:number;
-  cancellationReason:string;
-  notes:string;
 }
