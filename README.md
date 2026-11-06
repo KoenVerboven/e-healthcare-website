@@ -39,7 +39,8 @@ Patient:
 
 Appointment:
 
-<img width="1602" height="430" alt="image" src="https://github.com/user-attachments/assets/92f3dc34-042d-4dde-9c32-ead78a58eff4" />
+<img width="1587" height="467" alt="image" src="https://github.com/user-attachments/assets/08d8093f-3e2a-467b-a465-6030e73d8650" />
+
 
 
 
