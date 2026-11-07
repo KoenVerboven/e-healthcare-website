@@ -1,6 +1,14 @@
 <div class="sidebar" >
     <div class="content">
         <div class="link">
+          <div class="content" [routerLink]="['dashboard']" [routerLinkActive]="'active'">
+            <div class="icon"  data-placement="right" title="Hospitals">
+              <i class="bi bi-hospital"></i>
+            </div>
+            <div class="title">Dashboard</div>
+          </div>
+        </div>
+        <div class="link">
           <div class="content" [routerLink]="['hospitals']" [routerLinkActive]="'active'">
             <div class="icon"  data-placement="right" title="Hospitals">
               <i class="bi bi-hospital"></i>
@@ -17,7 +25,7 @@
           </div>
         </div>
         <div class="link">
-          <div class="content" [routerLink]="['patients']"  [routerLinkActive]="'active'" >
+          <div class="content" [routerLink]="['patients']" [routerLinkActive]="'active'">
             <div class="icon"  data-placement="right" title="Patients">
               <i class="bi bi-person-vcard"></i>
             </div>
@@ -25,7 +33,7 @@
           </div>
         </div>
         <div class="link">
-          <div class="content" [routerLink]="['appointments']" >
+          <div class="content" [routerLink]="['appointments']" [routerLinkActive]="'active'">
             <div class="icon"  data-placement="right" title="Appointments">
               <i class="bi bi-calendar"></i>
             </div>

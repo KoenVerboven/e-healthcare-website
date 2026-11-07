@@ -11,5 +11,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   styleUrl: './appointment-detail.component.css'
 })
 export class AppointmentDetailComponent {
-  pageTitle: string = 'Appointment Detail';
+   pageTitle: string = 'Appointment Detail';
+   action: string = 'Add';
+  
+  updateClick() {
+    throw new Error('Method not implemented.');
+  }
+  navigateBack() {
+    throw new Error('Method not implemented.');
+  }
+ 
 }

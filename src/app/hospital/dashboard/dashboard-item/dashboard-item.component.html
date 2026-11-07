@@ -1,0 +1,10 @@
+<div class="dashboarditemStyle"   style="background-color: rgb(201, 230, 245);" [ngStyle]="{'border-left-color': dashboardItem.color? dashboardItem.color : '#000'}"> 
+    <div style="float:left">
+      <div class="itemName">Total {{dashboardItem.itemName}}</div>
+      <div style="font-size: 26px;color:#6b6a6a"> {{dashboardItem.itemCount}}</div>
+      <div style="font-size: 14px;color:#9b9999"><u>More Info</u></div>
+    </div>
+    <div style = float:right;>
+        <i  [ngClass]=dashboardItem.icon style="margin-right: 10px;font-size: 2rem;" [ngStyle]="{'color': dashboardItem.color? dashboardItem.color : '#000'}"></i>
+    </div>
+</div>

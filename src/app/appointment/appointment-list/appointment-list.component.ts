@@ -3,12 +3,13 @@ import { Router, RouterModule } from '@angular/router';
 import { Appointment } from '../models/appointment.model';
 import { AppointmentService } from '../services/appointment.service';
 import { CommonModule } from '@angular/common';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AppointmentSpecParams } from '../models/appointmentSpecParams.models';
 
 @Component({
   selector: 'app-appointment-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MatProgressSpinnerModule],
   templateUrl: './appointment-list.component.html',
   styleUrl: './appointment-list.component.css'
 })
@@ -27,7 +28,7 @@ export class AppointmentListComponent {
   getAppointmentsByFilter()
   {
       this.loading = true;
-      /*
+      
        this.appointmentService.getDoctorAppointmentsByFilterCount(this.appointmentSpecParams.patientId,this.appointmentSpecParams.doctorId,this.appointmentSpecParams.startDate,this.appointmentSpecParams.endDate).subscribe((data: number) => {
           this.appointmentCount = data;
         },
@@ -38,7 +39,7 @@ export class AppointmentListComponent {
           this.loading = false;
         }
       );
-      */
+      
       //this.appointmentSpecParams.pageNumber = 1;
       this.getAppointmentByFilter();
    }
@@ -54,12 +55,10 @@ export class AppointmentListComponent {
             error => {
               this.error = 'An error has occurred. Please try again later.';
               console.log(error.message);
-              alert(error.message);
               this.loading = false;
             }
         );
     }
-
 
     addAppointment() {
       this.router.navigate(['/appointmentdetail/create',0]);

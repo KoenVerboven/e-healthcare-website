@@ -24,3 +24,7 @@ website : https://material.angular.dev/guide/getting-started
 ng add @angular/material
 
 C:\Users\koenv\source\repos\e-healthcare-website>ng g c appointment\appointment-detail
+
+Generate dashboard components:
+ng g c hospital\dashboard\dashboard-item
+ng g c hospital\dashboard\dashboard-list

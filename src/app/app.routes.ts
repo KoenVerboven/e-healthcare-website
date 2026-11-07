@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 
+import { DashboardListComponent } from './hospital/dashboard/dashboard-list/dashboard-list.component';
+
 import { MedicalrecordSwitchboardComponent } from './patient/medicalrecord/medicalrecord-switchboard/medicalrecord-switchboard.component';
 
 import { HospitalListComponent } from './hospital/hospital-list/hospital-list.component';
@@ -13,6 +15,9 @@ import { DoctorDetailComponent } from './doctor/doctor-detail/doctor-detail.comp
 import { AppointmentDetailComponent } from './appointment/appointment-detail/appointment-detail.component';
 
 export const routes: Routes = [
+  {path : '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path : 'dashboard', component: DashboardListComponent},
+
   { path : 'medicalrecordswitchboard', component: MedicalrecordSwitchboardComponent},
  
   { path: 'hospitals', component: HospitalListComponent },

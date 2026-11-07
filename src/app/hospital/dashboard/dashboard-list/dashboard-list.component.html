@@ -1,0 +1,15 @@
+<p class="pageTitle">Dashboard</p>
+<div class="container">
+  <div class="row">
+      @for(colomnNr of colomnNrs; track colomnNr){
+        <div class="col-sm">
+          @for(dasboarditem of items; track dasboarditem.id ){
+            @if(dasboarditem.columnNumber == colomnNr && dasboarditem.visible==true)
+            {
+              <app-dashboard-item [dashboardItem]="dasboarditem"  />
+            }
+          }
+        </div>
+      }
+  </div>
+</div>
