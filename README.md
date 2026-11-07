@@ -23,15 +23,29 @@
 
 ## Print Screens
 
+Dashboard:
+
+<img width="1905" height="640" alt="image" src="https://github.com/user-attachments/assets/25766c72-034d-4475-a945-f828ef13244c" />
+
+
+Doctor :
+
 <img width="1907" height="367" alt="image" src="https://github.com/user-attachments/assets/de24d391-6bf8-426a-a809-a4bf71bf239f" />
+
 
 <img width="1901" height="537" alt="image" src="https://github.com/user-attachments/assets/59ff5db3-4f7a-40aa-943f-ee276dd9f01b" />
 
+Patient:
+
 <img width="1901" height="457" alt="image" src="https://github.com/user-attachments/assets/ddc6d746-b7ce-4176-b24a-7f53cbb4c527" />
+
 
 <img width="1905" height="587" alt="image" src="https://github.com/user-attachments/assets/a8f640ff-61c6-482b-8f36-a92ef7d348fc" />
 
-<img width="1602" height="430" alt="image" src="https://github.com/user-attachments/assets/92f3dc34-042d-4dde-9c32-ead78a58eff4" />
+Appointment:
+
+<img width="1587" height="467" alt="image" src="https://github.com/user-attachments/assets/08d8093f-3e2a-467b-a465-6030e73d8650" />
+
 
 
 
