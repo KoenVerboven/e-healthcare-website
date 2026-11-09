@@ -7,7 +7,7 @@
  <div class="pageTitle" >
       {{pageTitle}}
  </div>
-<form (ngSubmit)="onSubmit()" #doctorForm="ngForm" class="formClass">
+<form (ngSubmit)="onSubmit()" #hospitalForm="ngForm" class="formClass">
    <div class="buttonBar" style="margin-top:10px">
       @if(action == 'detail')
       {
@@ -15,7 +15,7 @@
           <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
       }
       @else {
-          <button class="btn btn-light headerButton"  type="submit"><i class="bi bi-floppy"></i> Save</button>
+          <button class="btn btn-light headerButton"  type="submit" [disabled]="hospitalForm.invalid"><i class="bi bi-floppy"></i> Save</button>
           <button class="btn btn-light headerButton"  type="button" (click)="navigateBack()"><i class="bi bi-x-lg"></i> Cancel</button>
       }
    </div>
@@ -26,7 +26,11 @@
           <label class="form-label" style="float:right">Name *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="name"  [disabled]=disableControls  [(ngModel)]="hospital.name"  />
+          <input required maxlength="30" #hospitalName="ngModel" class="form-control"  type="text" name="name"  [disabled]=disableControls  [(ngModel)]="hospital.name"  />
+          @if((hospitalName.invalid &&(hospitalName.touched || hospitalName.dirty)) && hospitalName.errors?.['required'])
+          {
+            <div class="text-danger">Name is required</div>
+          }  
         </div>   
       </div>
       <div class="row detailDataRow">
@@ -34,7 +38,11 @@
           <label class="form-label" style="float:right">Address *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="address"  [disabled]=disableControls  [(ngModel)]="hospital.address"  />
+          <input required maxlength="30" #hospitalAddress="ngModel"  class="form-control"  type="text" name="address"  [disabled]=disableControls  [(ngModel)]="hospital.address"  />
+          @if((hospitalAddress.invalid &&(hospitalAddress.touched || hospitalAddress.dirty)) && hospitalAddress.errors?.['required'])
+          {
+            <div class="text-danger">Address is required</div>
+          }  
         </div>   
       </div>
       <div class="row  detailDataRow">
@@ -42,7 +50,11 @@
           <label class="form-label" style="float:right">PhoneNumber *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="phoneNumber"  [disabled]=disableControls  [(ngModel)]="hospital.phoneNumber"  />
+          <input required maxlength="30"  #hospitalPhoneNumber="ngModel"  class="form-control"  type="text" name="phoneNumber"  [disabled]=disableControls  [(ngModel)]="hospital.phoneNumber"  />
+          @if((hospitalPhoneNumber.invalid &&(hospitalPhoneNumber.touched || hospitalPhoneNumber.dirty)) && hospitalPhoneNumber.errors?.['required'])
+          {
+            <div class="text-danger">PhoneNumber is required</div>
+          }  
         </div>   
       </div>
       <div class="row detailDataRow">
@@ -50,7 +62,11 @@
           <label class="form-label" style="float:right">Email *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="email"  [disabled]=disableControls  [(ngModel)]="hospital.email"  />
+          <input required maxlength="30" #hospitalEmail="ngModel"   class="form-control"  type="text" name="email"  [disabled]=disableControls  [(ngModel)]="hospital.email"  />
+          @if((hospitalEmail.invalid &&(hospitalEmail.touched || hospitalEmail.dirty)) && hospitalEmail.errors?.['required'])
+          {
+            <div class="text-danger">Email is required</div>
+          }  
         </div>   
       </div>
     </div>
