@@ -16,7 +16,7 @@
           <button class="btn btn-light headerButton" type="button" (click)="updateClick()">Update</button>
       }
       @else {
-          <button class="btn btn-light headerButton"  type="submit"><i class="bi bi-floppy"></i> Save</button>
+          <button class="btn btn-light headerButton"  type="submit"   [disabled]="patientForm.invalid"><i class="bi bi-floppy"></i> Save</button>
           <button class="btn btn-light headerButton" type="button" (click)="navigateBack()"><i class="bi bi-x-lg"></i> Cancel</button>
       }
       <button style="float:right; margin-left: 15px;" class="btn btn-light headerButton" type="button" ><i class="bi bi-calendar-check"></i>  Appointments</button>
@@ -29,7 +29,11 @@
           <label class="form-label" style="float:right">Last Name *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="lastName" [disabled]=disableControls [(ngModel)]="patient.lastName" />
+          <input required maxlength="30"  class="form-control" #lastName="ngModel" type="text" name="lastName" [disabled]=disableControls [(ngModel)]="patient.lastName" />
+           @if((lastName.invalid &&(lastName.touched || lastName.dirty)) && lastName.errors?.['required'])
+          {
+            <div class="text-danger">Last Name is required</div>
+          }   
         </div>   
       </div>
       <div class="row detailDataRow">
@@ -37,7 +41,11 @@
           <label class="form-label" style="float:right">First Name *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="firstName" [disabled]=disableControls [(ngModel)]="patient.firstName" />
+          <input required maxlength="30"  class="form-control"  #firstName="ngModel"  type="text" name="firstName" [disabled]=disableControls [(ngModel)]="patient.firstName" />
+          @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['required'])
+          {
+            <div class="text-danger">First Name is required</div>
+          }   
         </div>   
       </div>
       <div class="row detailDataRow">
@@ -45,7 +53,11 @@
           <label class="form-label" style="float:right">Address *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="address" [disabled]=disableControls [(ngModel)]="patient.address" />
+          <input required maxlength="30"  class="form-control"  type="text"  #address="ngModel"  name="address" [disabled]=disableControls [(ngModel)]="patient.address" />
+          @if((address.invalid &&(address.touched || address.dirty)) && address.errors?.['required'])
+          {
+            <div class="text-danger">Address is required</div>
+          }
         </div>   
       </div>
       <div class="row detailDataRow">
@@ -53,7 +65,11 @@
           <label class="form-label" style="float:right">PhoneNumber *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="phoneNumber" [disabled]=disableControls [(ngModel)]="patient.phoneNumber" />
+          <input required maxlength="30"  class="form-control"  type="text" #phoneNumber="ngModel" name="phoneNumber" [disabled]=disableControls [(ngModel)]="patient.phoneNumber" />
+          @if((phoneNumber.invalid &&(phoneNumber.touched || phoneNumber.dirty)) && phoneNumber.errors?.['required'])
+          {
+            <div class="text-danger">Phone Number is required</div>
+          }  
         </div>   
       </div>
       <div class="row detailDataRow">
@@ -61,7 +77,11 @@
           <label class="form-label" style="float:right">Email *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" name="email" [disabled]=disableControls [(ngModel)]="patient.email" />
+          <input required maxlength="30"  class="form-control"  type="text"  #email="ngModel"  name="email" [disabled]=disableControls [(ngModel)]="patient.email" />
+          @if((email.invalid &&(email.touched || email.dirty)) && email.errors?.['required'])
+          {
+            <div class="text-danger">Email is required</div>
+          }   
         </div>   
       </div>
    </div>
