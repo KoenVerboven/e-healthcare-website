@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,Validators,ReactiveFormsModule } from '@angular/forms';
 import { Router,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Doctor } from '../models/doctor.model';
@@ -10,7 +10,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-doctor-detail',
   standalone: true,
-  imports: [FormsModule, CommonModule, MatProgressSpinnerModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, MatProgressSpinnerModule],
   templateUrl: './doctor-detail.component.html',
   styleUrl: './doctor-detail.component.css'
 })

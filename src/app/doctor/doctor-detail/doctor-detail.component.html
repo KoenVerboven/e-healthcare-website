@@ -77,11 +77,18 @@
           <label class="form-label" style="float:right">Email *</label>    
         </div>
         <div class="col-10">
-          <input required maxlength="30"  class="form-control"  type="text" #email="ngModel" name="email"  [disabled]=disableControls [(ngModel)]="doctor.email" />
-          @if((email.invalid &&(email.touched || email.dirty)) && email.errors?.['required'])
-          {
-            <div class="text-danger">Email is required</div>
-          }   
+          <input required maxlength="30" email #email="ngModel" [disabled]=disableControls class="form-control" type="email" name="email"  [(ngModel)]="doctor.email" />
+               @if(email.invalid &&(email.touched || email.dirty))
+               {
+                  @if(email.errors?.['required'])
+                  {
+                     <div class="text-danger">Email is required</div>
+                  }
+                  @if(email.errors?.['email'])
+                  {
+                     <div class="text-danger">Email is invalid</div>
+                  }
+               }
         </div>   
       </div>
     </div>
