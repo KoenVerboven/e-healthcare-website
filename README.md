@@ -32,8 +32,10 @@ Doctor :
 
 <img width="1907" height="367" alt="image" src="https://github.com/user-attachments/assets/de24d391-6bf8-426a-a809-a4bf71bf239f" />
 
-
 <img width="1901" height="537" alt="image" src="https://github.com/user-attachments/assets/59ff5db3-4f7a-40aa-943f-ee276dd9f01b" />
+
+<img width="1882" height="667" alt="image" src="https://github.com/user-attachments/assets/c095c2c7-2228-4fd2-88ac-75fd63119f15" />
+
 
 Patient:
 
