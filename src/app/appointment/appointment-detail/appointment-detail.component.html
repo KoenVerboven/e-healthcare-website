@@ -19,4 +19,35 @@
 <br/><br/>
 <button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button"  ><i class="bi bi-plus"></i>Choose Place</button>
 <br/><br/>
-<button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button"  ><i class="bi bi-plus"></i>Choose Date and Time</button>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <p>Selected Date : {{ selectedDate }}</p>
+      <mat-card class="calendar-card">
+         <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+      </mat-card>
+    </div>
+    <div class="col">
+      <app-appointment-time-list />
+    </div>
+    <div class="col">
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      
+    </div>
+    <div class="col">
+      
+    </div>
+    <div class="col">
+      
+    </div>
+  </div>
+</div>
+
+ 
+
+
+    

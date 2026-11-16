@@ -33,7 +33,11 @@
           @if((lastName.invalid &&(lastName.touched || lastName.dirty)) && lastName.errors?.['required'])
           {
             <div class="text-danger">Last Name is required</div>
-         }   
+          }   
+          @if((lastName.invalid &&(lastName.touched || lastName.dirty)) && lastName.errors?.['maxlength'])
+          {
+            <div class="text-danger">Last Name must be at most 30 characters</div>
+          }   
         </div>   
       </div>
       <div class="row detailDataRow">
@@ -45,6 +49,10 @@
           @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['required'])
           {
             <div class="text-danger">First Name is required</div>
+          }   
+          @if((firstName.invalid &&(firstName.touched || firstName.dirty)) && firstName.errors?.['maxlength'])
+          {
+            <div class="text-danger">First Name must be at most 30 characters</div>
           }   
         </div>   
       </div>

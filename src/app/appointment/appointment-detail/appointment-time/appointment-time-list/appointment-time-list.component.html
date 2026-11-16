@@ -1,0 +1,6 @@
+<p> Choose a time </p>
+ @for(appointmentTimeItem of items; track appointmentTimeItem.id )
+ {
+     <app-appointment-time-item [appointmentTimeItem]="appointmentTimeItem" />
+ }
+

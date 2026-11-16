@@ -28,3 +28,7 @@ C:\Users\koenv\source\repos\e-healthcare-website>ng g c appointment\appointment-
 Generate dashboard components:
 ng g c hospital\dashboard\dashboard-item
 ng g c hospital\dashboard\dashboard-list
+
+
+ng g c appointment\appointment-detail\appointment-time\appointment-time-item
+ng g c appointment\appointment-detail\appointment-time\appointment-time-list
