@@ -12,14 +12,16 @@
       <button class="btn btn-light headerButton" type="button" (click)="navigateBack()"><i class="bi bi-x-lg"></i> Cancel</button>
   }
 </div>
+<button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button">Choose Patient</button>
+<button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button">Choose Doctor</button>
+<button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button">Choose Place</button>
 <br/><br/>
-<button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button"  ><i class="bi bi-plus"></i>Choose Patient</button>
-<br/><br/>
-<button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button"  ><i class="bi bi-plus"></i>Choose Doctor</button>
-<br/><br/>
-<button style="float:left; margin-left: 15px;" class="btn btn-light headerButton" type="button"  ><i class="bi bi-plus"></i>Choose Place</button>
-<br/><br/>
-<div class="container text-center">
+<p>Patient : {{ selectedPatient }}</p>
+<p>Doctor : {{ selectedDoctor }}</p>
+<p>Place : {{ selectedPlace }}</p>
+<p><textarea placeholder="Enter appointment notes..." style="width: 350px; height: 100px;"></textarea></p>
+
+<div class="container text-left" style="margin-top: 20px;">
   <div class="row">
     <div class="col">
       <p>Selected Date : {{ selectedDate }}</p>

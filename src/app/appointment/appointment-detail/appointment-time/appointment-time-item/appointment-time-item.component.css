@@ -1,0 +1,12 @@
+.appointment-time-item{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.appointment-time-item:hover{
+  color:white !important;
+  background-color: rgb(54, 163, 190) !important;
+}

@@ -1,5 +1,6 @@
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -14,10 +15,32 @@ import { AppointmentTimeListComponent } from './appointment-time/appointment-tim
   templateUrl: './appointment-detail.component.html',
   styleUrl: './appointment-detail.component.css'
 })
-export class AppointmentDetailComponent {
+export class AppointmentDetailComponent implements OnInit {
    pageTitle: string = 'Appointment Detail';
-   action: string = 'Add';
+   action: string = '';
    selectedDate: Date | null = null;
+   selectedPatient: string = 'Victor Verboven';
+   selectedDoctor: string = 'Prof. Dr. Ir. Joris De Schutter';
+   selectedPlace: string = 'Clinic A - Room 1';
+
+   constructor(
+     private router: Router,
+     private route: ActivatedRoute,
+   ){}
+
+   ngOnInit() {
+    this.route.paramMap.subscribe(result => {
+      const action = result.get('action');
+      this.action = action != null ? action : '';
+      if(this.action == 'create'){
+        this.pageTitle = "Create new appointment";
+      }
+      else if(this.action == "detail"){
+        this.pageTitle = "Appointment detail";
+      }
+     });
+   
+   }
   
   updateClick() {
     throw new Error('Method not implemented.');

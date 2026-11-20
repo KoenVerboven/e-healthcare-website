@@ -6,4 +6,5 @@ export interface AppointmentTime{
     icon?:string;
     visible:boolean;
     enabled:boolean;
+    columnNr:number;
 }

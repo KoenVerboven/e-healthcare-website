@@ -1,6 +1,18 @@
 <p> Choose a time </p>
- @for(appointmentTimeItem of items; track appointmentTimeItem.id )
- {
-     <app-appointment-time-item [appointmentTimeItem]="appointmentTimeItem" />
- }
+<div class="container">
+  <div class="row">
+      @for(colomnNr of columnNrs; track colomnNr){
+        <div class="col-sm">
+          @for(appointmentTimeItem of items; track appointmentTimeItem.id ){
+            @if(appointmentTimeItem.columnNr == colomnNr)
+            {
+              <app-appointment-time-item [appointmentTimeItem]="appointmentTimeItem" />
+            }
+          }
+        </div>
+      }
+  </div>
+</div>
+
+
 
