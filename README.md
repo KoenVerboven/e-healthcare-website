@@ -25,16 +25,17 @@
 
 Dashboard:
 
-<img width="1905" height="640" alt="image" src="https://github.com/user-attachments/assets/25766c72-034d-4475-a945-f828ef13244c" />
+<img width="1905" height="762" alt="image" src="https://github.com/user-attachments/assets/469520f2-49ff-46fc-8437-3962bee9bace" />
 
 
 Doctor :
 
-<img width="1907" height="367" alt="image" src="https://github.com/user-attachments/assets/de24d391-6bf8-426a-a809-a4bf71bf239f" />
+<img width="1912" height="561" alt="image" src="https://github.com/user-attachments/assets/df43556a-dcd1-45f5-b2f8-a3162470e05c" />
 
-<img width="1901" height="537" alt="image" src="https://github.com/user-attachments/assets/59ff5db3-4f7a-40aa-943f-ee276dd9f01b" />
+<img width="1897" height="626" alt="image" src="https://github.com/user-attachments/assets/812aef7f-2b23-48e9-b027-79d2fecc877f" />
 
-<img width="1882" height="667" alt="image" src="https://github.com/user-attachments/assets/c095c2c7-2228-4fd2-88ac-75fd63119f15" />
+<img width="1902" height="751" alt="image" src="https://github.com/user-attachments/assets/2cca44b2-47df-4a67-bb0d-5d56c6d6ef6f" />
+
 
 
 Patient:
