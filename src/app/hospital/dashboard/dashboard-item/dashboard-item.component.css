@@ -7,7 +7,7 @@
     padding-left:0.7rem;
     border: 0.1rem solid rgb(168, 162, 241) ;
     border-left: 0.6rem solid rgb(43, 226, 186)  ;
-    background-color: rgb(56, 133, 168);
+    background-color: rgb(249, 249, 249) !important;
 }
 .itemName{
     font-size: 1.1rem;
